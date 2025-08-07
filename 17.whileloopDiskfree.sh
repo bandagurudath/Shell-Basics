@@ -10,10 +10,10 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-Storage=$(df -hT | xfs)
+Storage=$(df -hT | grep xfs)
 Threshold=10
 
-while IFS=read -r line
+while IFS= read -r line
 do
 CurrentStorage=$($line | awk -F " " 'print $6F' | cut -d "%" -f1) &>>$LOGPATH
 DiskName=$($line | awk -F " " 'print $NF') &>>$LOGPATH
