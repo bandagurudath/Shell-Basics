@@ -11,7 +11,7 @@ Y="\e[33m"
 N="\e[0m"
 
 Storage=$(df -hT | xfs)
-Threshold=30
+Threshold=10
 
 while IFS=read -r line
 do

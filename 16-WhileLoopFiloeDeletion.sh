@@ -10,7 +10,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-Files=$(find /tmp/ -name "*.log" -mtime +14) &>>$LOGPATH
+Files=$(find /tmp/ -name "*.log" -mtime +14)
 
 while IFS= read -r line
 do
