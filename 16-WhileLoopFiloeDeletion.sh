@@ -10,9 +10,9 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-Files=$(find /tmp/ -name "*.log" -mtime +14)
+Files=$(find /tmp/ -name "*.log" -mtime +14) &>>$LOGPATH
 
-while IFS=read -r line
+while IFS= read -r line
 do
 echo "Deleting file : $line"
 rm -rf $line &>>$LOGPATH
