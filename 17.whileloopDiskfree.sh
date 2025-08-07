@@ -15,8 +15,8 @@ Threshold=10
 
 while IFS= read -r line
 do
-CurrentStorage=$($line | awk -F " " '{print $6F}' | cut -d "%" -f1) &>>$LOGPATH
-DiskName=$($line | awk -F " " '{print $NF}') &>>$LOGPATH
+CurrentStorage=$(echo $line | awk -F " " '{print $6F}' | cut -d "%" -f1) &>>$LOGPATH
+DiskName=$(echo $line | awk -F " " '{print $NF}') &>>$LOGPATH
 
 if [ $CurrentStorage -ge $Threshold ]
 then
